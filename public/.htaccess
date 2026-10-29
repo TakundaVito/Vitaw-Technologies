@@ -1,0 +1,47 @@
+Options -Indexes
+DirectoryIndex index.html index.php
+RewriteEngine On
+RewriteRule ^(?:src|storage|config|schema|tests|tools)(?:/|\.|$) - [F,L]
+RewriteRule ^sitemap\.php$ sitemap.xml [L]
+# Canonical public URLs; existing static pages bypass CMS routes.
+RewriteCond %{HTTP_HOST} ^www\.vitaw\.co\.zw$ [NC]
+RewriteRule ^ https://vitaw.co.zw%{REQUEST_URI} [R=301,L]
+RewriteCond %{HTTP_HOST} ^vitaw\.co\.zw$ [NC]
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+RewriteRule ^ https://vitaw.co.zw%{REQUEST_URI} [R=301,L]
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^(projects|services)/(.*)/index\.html$ /$1/$2/ [R=301,L]
+RewriteRule ^(projects|services)/index\.html$ /$1/ [R=301,L]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+RewriteRule ^(?:projects|insights)/([a-z0-9-]+)/?$ entry.php?slug=$1 [L,QSA]
+RewriteRule ^insights/?$ listing.php?kind=insights [L,QSA]
+RewriteRule ^projects/?$ listing.php?kind=projects [L,QSA]
+ErrorDocument 404 /404.html
+<IfModule mod_mime.c>
+AddType font/woff2 .woff2
+</IfModule>
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "DENY"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+<FilesMatch "^site\.[a-f0-9]+\.(css|js)$">
+Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+<FilesMatch "\.(html)$">
+Header set Cache-Control "no-cache"
+</FilesMatch>
+</IfModule>
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json application/xml image/svg+xml
+</IfModule>
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType text/css "access plus 1 week"
+ExpiresByType application/javascript "access plus 1 week"
+ExpiresByType image/webp "access plus 1 month"
+ExpiresByType image/avif "access plus 1 month"
+ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>

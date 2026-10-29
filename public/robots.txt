@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /setup.php
+
+Sitemap: https://vitaw.co.zw/sitemap.xml

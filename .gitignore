@@ -1,0 +1,15 @@
+/config.php
+.env
+.env.*
+!.env.example
+/storage/
+/public/media/
+*.sqlite
+*.sqlite3
+*.log
+__pycache__/
+.DS_Store
+Thumbs.db
+
+# One-time, deployment-specific setup handler
+/public/admin/setup.php
