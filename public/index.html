@@ -213,8 +213,8 @@
       type="font/woff2"
       crossorigin
     />
-    <link rel="stylesheet" href="/site.fb6e3ff046a6.css" />
-  </head>
+    
+  <link rel="preload" href="/assets/fonts/barlow-condensed-600.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/site.fb6e3ff046a6.css"></head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
     <header class="page-header">
@@ -704,36 +704,8 @@
           organisations across Africa and around the world.
         </p>
       </section>
-      <section id="leadership" class="section leadership-highlight">
-        <div class="section-label">03 / LEADERSHIP</div>
-        <div class="section-heading">
-          <h2>LED WITH<br />PURPOSE<span class="blue">.</span></h2>
-          <p>
-            Technical depth and business direction,<br />working as one team.
-          </p>
-        </div>
-        <div class="leadership-grid">
-          <article class="leader-card">
-            <span class="mono">CO-FOUNDER &amp; CHIEF EXECUTIVE OFFICER</span>
-            <h3>Whisper Kudzai Vito</h3>
-            <p>
-              Leads the company’s strategy, partnerships and global growth—
-              keeping every engagement focused on useful, lasting value.
-            </p>
-          </article>
-          <article class="leader-card">
-            <span class="mono">CHIEF TECHNOLOGY OFFICER</span>
-            <h3>Takunda Vito</h3>
-            <p>
-              Leads technology, product engineering and delivery across web,
-              mobile, AI, electronics, automation and intelligent systems.
-            </p>
-          </article>
-        </div>
-        <a class="text-link" href="/about/">Meet the leadership team ↗</a>
-      </section>
       <section id="projects" class="section">
-        <div class="section-label">04 / PROJECTS</div>
+        <div class="section-label">03 / PROJECTS</div>
         <div class="section-heading">
           <h2>BUILT BY<br />VITAW TECHNOLOGIES<span class="blue">.</span></h2>
           <p>
@@ -1004,7 +976,7 @@
       </section>
 
       <section id="insights" class="section">
-        <div class="section-label">09 / INSIGHTS</div>
+        <div class="section-label">08 / INSIGHTS</div>
         <div class="section-heading">
           <h2>THINKING IN SYSTEMS<span class="blue">.</span></h2>
           <p>
@@ -1046,9 +1018,9 @@
         <details>
           <summary>Where can I see examples of your website work?</summary>
           <p>
-            Our website portfolio includes Nheyotech, Carstie, Vaima, Chase The
-            Transporter, Eastgate Furnitures, Engirvine and Kudzai Vito. Each
-            project links to the live website.
+            Our website portfolio includes Quadratic Hygienics, Waima Autocare,
+            Boreline Solutions, Virtuous Trends, Nheyotech, Carstie, Chase The
+            Transporter, Eastgate Furnitures, Engirvine and Morden Masonry.
           </p>
         </details>
         <details>
@@ -1079,8 +1051,19 @@
           </p>
         </details>
       </section>
+      <section id="partners" class="section trust-section">
+        <div class="section-label">09 / PARTNERS</div>
+        <div class="section-heading"><h2>BUILDING<br />TOGETHER<span class="blue">.</span></h2><p>Technology partnerships that extend what we can deliver for clients worldwide.</p></div>
+        <div id="partner-list" class="partner-grid" aria-live="polite"><p class="form-note">Loading our partner network…</p></div>
+      </section>
+      <section id="reviews" class="section trust-section">
+        <div class="section-label">10 / CLIENT REVIEWS</div>
+        <div class="section-heading"><h2>TRUST,<br />IN THEIR WORDS<span class="blue">.</span></h2><p>Approved feedback from the people and organisations we serve.</p></div>
+        <div id="review-list" class="review-grid" aria-live="polite"><p class="form-note">Approved reviews will appear here.</p></div>
+        <details class="review-submit"><summary>Share your experience with Vitaw</summary><form id="review-form" action="/api/reviews.php" method="post"><div class="form-row"><label>Full name<input name="name" required maxlength="120" autocomplete="name"></label><label>Company<input name="company" maxlength="160" autocomplete="organization"></label></div><div class="form-row"><label>Your role<input name="role" maxlength="120"></label><label>Rating<select name="rating" required><option value="">Select</option><option value="5">5 — Excellent</option><option value="4">4 — Very good</option><option value="3">3 — Good</option><option value="2">2 — Fair</option><option value="1">1 — Poor</option></select></label></div><label>Your review<textarea name="review" required minlength="20" maxlength="2000" rows="5"></textarea></label><p class="form-note">Reviews are checked before publication. Please do not include private or confidential information.</p><button class="button" type="submit">Submit review <span>↗</span></button><p id="review-status" role="status"></p></form></details>
+      </section>
       <section id="contact" class="section contact">
-        <div class="section-label">10 / LET'S BUILD</div>
+        <div class="section-label">09 / LET'S BUILD</div>
         <div class="split">
           <div>
             <h2>HAVE A PROBLEM<br />WORTH<br /><em>ENGINEERING?</em></h2>
@@ -1226,6 +1209,6 @@
       </nav>
     </footer>
 
-    <script src="/site.8ad9946ace54.js" defer></script>
-  </body>
+    
+  <script src="/site.9b0cc9750a01.js" defer></script></body>
 </html>

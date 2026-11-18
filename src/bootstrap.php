@@ -16,8 +16,19 @@ function db(): PDO {
     if (!$pdo) {
         $c = config();
         $pdo = new PDO($c['dsn'], $c['db_user'] ?? null, $c['db_password'] ?? null, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]);
+        ensureFeatureTables($pdo);
     }
     return $pdo;
+}
+function ensureFeatureTables(PDO $pdo): void {
+    static $done=false;if($done)return;$done=true;
+    $driver=$pdo->getAttribute(PDO::ATTR_DRIVER_NAME);
+    $id=$driver==='sqlite'?'INTEGER PRIMARY KEY AUTOINCREMENT':'INTEGER PRIMARY KEY AUTO_INCREMENT';
+    $pdo->exec("CREATE TABLE IF NOT EXISTS site_requests (id $id,name VARCHAR(120) NOT NULL,company VARCHAR(160) NOT NULL,email VARCHAR(254) NOT NULL,phone VARCHAR(40) NOT NULL,website_type VARCHAR(80) NOT NULL,budget VARCHAR(80) NOT NULL,timeline VARCHAR(80) NOT NULL,features TEXT NOT NULL,reference_url VARCHAR(500) NOT NULL,status VARCHAR(30) NOT NULL DEFAULT 'New',created_at VARCHAR(30) NOT NULL)");
+    $pdo->exec("CREATE TABLE IF NOT EXISTS reviews (id $id,name VARCHAR(120) NOT NULL,company VARCHAR(160) NOT NULL,reviewer_role VARCHAR(120) NOT NULL,rating INTEGER NOT NULL,review TEXT NOT NULL,status VARCHAR(30) NOT NULL DEFAULT 'Pending',created_at VARCHAR(30) NOT NULL,updated_at VARCHAR(30) NOT NULL)");
+    $pdo->exec("CREATE TABLE IF NOT EXISTS partners (id $id,name VARCHAR(180) NOT NULL,url VARCHAR(500) NOT NULL,description TEXT NOT NULL,logo_url VARCHAR(500) NOT NULL,featured INTEGER NOT NULL DEFAULT 0,visible INTEGER NOT NULL DEFAULT 0,sort_order INTEGER NOT NULL DEFAULT 0,created_at VARCHAR(30) NOT NULL,updated_at VARCHAR(30) NOT NULL)");
+    $q=$pdo->prepare('SELECT COUNT(*) FROM partners WHERE name=?');$q->execute(['Cicosy Private Limited']);
+    if(!(int)$q->fetchColumn())$pdo->prepare('INSERT INTO partners(name,url,description,logo_url,featured,visible,sort_order,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?,?)')->execute(['Cicosy Private Limited','https://cicosy.com/','Our principal technology partner, collaborating with Vitaw Technologies on ambitious digital solutions.','',1,1,10,gmdate('c'),gmdate('c')]);
 }
 function sessionStart(): void {
     if (session_status() === PHP_SESSION_ACTIVE) return;
