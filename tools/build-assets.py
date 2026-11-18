@@ -21,7 +21,7 @@ pages = sorted(public.rglob('*.html')) + [public / 'entry.php', public / 'listin
 for path in pages:
     name = path.relative_to(public).as_posix()
     html = path.read_text(encoding='utf-8')
-    html = re.sub(r'<link rel="stylesheet" href="/(?:site\.[a-f0-9]+|style|slideshow)\.css[^\"]*">', '', html)
+    html = re.sub(r'<link rel="stylesheet" href="/(?:site\.[a-f0-9]+|style|slideshow)\.css[^\"]*"\s*/?>', '', html)
     html = re.sub(r'<script src="/(?:site\.[a-f0-9]+|app|slideshow)\.js[^\"]*" defer></script>', '', html)
     html = re.sub(r'<link rel="preload" href="/assets/fonts/[^\"]+"[^>]*>', '', html)
     html = html.replace('</head>', '<link rel="preload" href="/assets/fonts/barlow-condensed-600.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/' + names['css'] + '"></head>')

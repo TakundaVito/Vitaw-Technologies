@@ -2,7 +2,7 @@
 
 Official website source for [vitaw.co.zw](https://vitaw.co.zw/).
 
-The original homepage structure and six-image technology slideshow are retained. The site includes the official logo and icons, service pages, website portfolio, About and leadership, privacy policy, terms of use, and shared navigation. Vitaw operates globally, with headquarters in Zimbabwe.
+The original homepage structure is retained with a large six-image technology slideshow led by new robotics, electronics, web-development and app-development visuals. The site includes the official logo and icons, service pages, a dedicated web-development landing page, website portfolio, About and leadership, privacy policy, terms of use, and shared navigation. Vitaw operates globally, with headquarters in Zimbabwe.
 
 ## Technology
 
@@ -57,4 +57,4 @@ The authenticated PHP administration portal supports enquiries and database cont
 
 ## Validation
 
-The public sitemap contains 20 canonical URLs. Before deployment, check page navigation, legal links, hero controls and mobile layouts. Google accepted the sitemap earlier in the project; discovery and ranking are controlled by search providers. No ranking or performance score is guaranteed.
+The public sitemap contains 21 canonical URLs. Before deployment, check page navigation, legal links, hero controls and mobile layouts. Google accepted the sitemap earlier in the project; discovery and ranking are controlled by search providers. No ranking or performance score is guaranteed.
