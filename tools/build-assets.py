@@ -7,6 +7,7 @@ public = root / 'public'
 css = (root / 'src/fonts.css').read_text(encoding='utf-8') + '\n'
 css += (public / 'style.css').read_text(encoding='utf-8') + '\n'
 css += (public / 'slideshow.css').read_text(encoding='utf-8')
+css += '\n' + (public / 'mobile.css').read_text(encoding='utf-8')
 css = re.sub(r'\.(?:geometry-stage|cross|c1|c2|axis|axis-x|axis-y|model-placeholder|model-label|stage-bottom)(?:[^{}]*)\{[^{}]*\}', '', css)
 js = '(()=>{\n' + (public / 'app.js').read_text(encoding='utf-8') + '\n})();\n'
 js += (public / 'slideshow.js').read_text(encoding='utf-8')
