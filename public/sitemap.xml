@@ -25,4 +25,8 @@
   <url><loc>https://vitaw.co.zw/services/iot-embedded-systems/</loc></url>
   <url><loc>https://vitaw.co.zw/services/engineering-design/</loc></url>
   <url><loc>https://vitaw.co.zw/about/</loc></url>
-<url><loc>https://vitaw.co.zw/privacy/</loc></url><url><loc>https://vitaw.co.zw/terms/</loc></url><url><loc>https://vitaw.co.zw/services/school-management-software/</loc></url></urlset>
+  <url><loc>https://vitaw.co.zw/privacy/</loc></url>
+  <url><loc>https://vitaw.co.zw/terms/</loc></url>
+  <url><loc>https://vitaw.co.zw/services/school-management-software/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://vitaw.co.zw/services/school-management-system-zimbabwe/</loc><lastmod>2026-11-24</lastmod></url>
+</urlset>
