@@ -4,15 +4,18 @@
 
 1. Add a canonical `/schools/` product page using only functionality verified from the deployed SMS bundle.
 2. Publish approved pricing from a single source on that page:
-   - US$250 one-time onboarding.
-   - US$70/month for up to 500 enrolled learners.
-   - US$130/month for 501–1,000 enrolled learners.
-   - Custom quote above 1,000 learners or for multi-school groups.
-   - Optional training quoted separately.
-3. Link `/schools/` from the main navigation and homepage.
-4. Add WhatsApp and product-access CTAs without claiming that an unverified public demo exists.
-5. Add `SoftwareApplication`, `Offer`, FAQ and breadcrumb structured data.
-6. Add `/schools/` to the corporate sitemap.
+   - Starter: US$63/month for 1–300 active students.
+   - Growth: US$126/month for 301–800 active students.
+   - Enterprise: US$196/month for 801–1,500 active students.
+   - Custom quote for 1,501+ active students.
+   - Annual prepayment receives a 10% subscription discount.
+   - Standard setup and basic remote orientation are included.
+   - SMS, assisted migration, extra training/travel and bespoke work are separate.
+3. Calculate optional assisted record migration progressively: US$1.00 for records 1–500, US$0.75 for 501–1,000, US$0.50 for 1,001–1,500 and US$0.25 thereafter, with a US$100 minimum when selected.
+4. Link `/schools/` from the main navigation and homepage.
+5. Add WhatsApp and product-access CTAs without claiming that an unverified public demo exists.
+6. Add `SoftwareApplication`, `Offer`, FAQ and breadcrumb structured data.
+7. Add `/schools/` to the corporate sitemap.
 
 ## P1 — SMS application (separate repository required)
 
